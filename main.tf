@@ -8,9 +8,9 @@ resource "aws_instance" "one"{
   key_name="sid"
   vpc_security_group_ids=["sg-003550d9d3300d12f"]
   tags={
-  name=var.instance_name[count.index]
+  name=var.instance_names[count.index]
   }
 }
-variable "instance_name" {
+variable "instance_names" {
   default=["jenkins","nexus","tomcat-1","tomcat-2"]
 }
